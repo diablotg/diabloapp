@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PRUEBA DE ANUNCIO</title>
+    <style>
+       
+        .anuncio {
+            background-color: #3b0303; 
+            color: white; 
+            padding: 10px; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}">
+        Link a Home
+    </a>
+    <div class="anuncio">
+        <h1>
+            {{mensaje}} <br>
+
+            <div id="contenido-a-actualizar"></div>
+
+        
+        </h1>
+    </div>
+   
+
+    <script>
+        // Función para actualizar el contenido cada segundo
+        function actualizarContenido() {
+            // Aquí puedes realizar alguna lógica para obtener el nuevo contenido
+            // Por ejemplo, si deseas mostrar la hora actual:
+            var horaActual = new Date().toLocaleTimeString();
+
+            // Actualiza el contenido del div
+            document.getElementById("contenido-a-actualizar").innerHTML = "Hora local: " + horaActual;
+        }
+
+        // Llama a la función de actualización cada segundo (1000 ms)
+        setInterval(actualizarContenido, 1000);
+    </script>
+</body>
+</html>
