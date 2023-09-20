@@ -1,18 +1,22 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PRUEBA DE ANUNCIO</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>INICIO DE PROYECTO</title>
     <style>
        
         .anuncio {
-            background-color: #3b0303; 
-            color: white; 
+            background-color: #1b5d729a; 
+            color: rgb(0, 0, 0); 
             padding: 10px; 
             text-align: center; 
         }
     </style>
 </head>
 <body>
+    
     <a href="{% url 'home' %}">
         Link a Home
     </a>
@@ -25,13 +29,15 @@
         
         </h1>
     </div>
-   
+   <br>
+   <button onclick="irAURL()">Info de usuario</button>
 
     <script>
-        // Función para actualizar el contenido cada segundo
+        function irAURL() {
+            // Redirigir a la URL deseada
+            window.location.href = "http://127.0.0.1:8000/user/"; // Reemplaza con la URL que desees
+        }
         function actualizarContenido() {
-            // Aquí puedes realizar alguna lógica para obtener el nuevo contenido
-            // Por ejemplo, si deseas mostrar la hora actual:
             var horaActual = new Date().toLocaleTimeString();
 
             // Actualiza el contenido del div

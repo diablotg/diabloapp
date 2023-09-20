@@ -17,14 +17,11 @@ Including another URLconf
 from diabloapp import views
 from django.contrib import admin
 from django.urls import path
-from formulario_usuarios import views1
+from formulario_usuarios import views
+
+
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('otro/', views.puto, name='home'),
-    path('', views.mi_vista, name='mi_vista'),
-    path('gitk/', views.nuevo, name='nuevo'),
-    path('none/', views.trato, name='nuevo'),
-    path('user/', views.user, name='user'),
-    path('agregar_usuario/', views1.agregar_usuario, name='agregar_usuario'),
+    path('agregar_usuario/', views.agregar_usuario, name='agregar_usuario'),
 ]
